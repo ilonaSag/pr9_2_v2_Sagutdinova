@@ -1,19 +1,24 @@
 package Railway
 
 open class Train(
-    var numer: String,
+    var numer: Int,
     var endStation: String,
-    var interval: String,
     var price: Double
 ) {
-
-    fun СhangeInterval(newInterval: String) {
-        interval = newInterval
-        println("Интервал движения изменен на: $interval")
+    fun ValidPrice(price: Double?):Boolean{
+        if (price!! <0.0)
+        {
+            println("Цена не может быть меньше или равняться 0")
+            return false
+        }
+        return true
     }
-
-    fun СhangePrice(newPrice: Double) {
-        price = newPrice
-        println("Цена билета изменена на: $price")
+    fun ValidNumer(numer: Int?):Boolean{
+        if (numer!! <0)
+        {
+            println("Номер поезда не может быть меньше или равняться 0")
+            return false
+        }
+        return true
     }
 }
