@@ -37,6 +37,18 @@ fun main (){
     println("Введите базовую цену билета:")
     val price = readLine()!!.toDouble()
 
+    //Создание объекта поезд
+    val train = NewTrain(trainNumber, station, price)
+        //Проверка цены
+    if (!train.ValidPrice(price))
+    {
+        return
+    }
+        //Проверка номера поезда
+    if (!train.ValidNumer(trainNumber))
+    {
+       return
+    }
     // Создание объекта билета
     val ticket = NewTicket(passengerName, passengerAge, trainNumber, station, time, data, price)
 
